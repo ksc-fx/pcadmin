@@ -1,0 +1,208 @@
+.abs(@top,@left,@right,@bottom,@width,@height){
+    position:absolute;
+    top:@top;
+    left:@left;
+    width:@width;
+    height:@height;
+    right:@right;
+    bottom:@bottom;
+}
+
+.box-sizing (@type: border-box) {
+    -webkit-box-sizing: @type;
+    box-sizing: @type;
+}
+
+.tap-highlight-color (@color: rgba(0,0,0,0)) {
+    -webkit-tap-highlight-color: @color;
+    tap-highlight-color: @color;
+}
+
+.transform-origin (@x: center, @y: center) {
+    -webkit-transform-origin: @x @y;
+    transform-origin: @x @y;
+}
+
+.border-radius (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+    -webkit-border-radius: @topright @bottomright @bottomleft @topleft;
+    border-radius: @topright @bottomright @bottomleft @topleft;
+}
+
+.transform (@string) {
+    -webkit-transform: @string;
+    transform: @string;
+}
+
+.animation (@string) {
+    -webkit-animation: @string;
+    animation: @string;
+}
+
+.transition (@string) {
+    -webkit-transition: @string;
+    transition: @string;
+}
+
+.box-flex(@columns: initial) {
+    -webkit-box-flex: @columns;
+    box-flex: @columns;
+    flex: @columns;
+}
+
+.flex-display(@display: flex) {
+    display: ~"-webkit-@{display}";
+    display: @display;
+}
+
+.background-size (@string) {
+    -webkit-background-size: @string;
+    background-size: @string;
+}
+
+.box-shadow (@string) {
+    -webkit-box-shadow: @string;
+    box-shadow: @string;
+}
+
+.text-shadow (@string) {
+    -webkit-text-shadow: @string;
+    text-shadow: @string;
+}
+
+.overflow-scrolling (@string) {
+    -webkit-overflow-scrolling: @string;
+    overflow-scrolling: @string;
+}
+
+.perspective (@string) {
+    -webkit-perspective: @string;
+    perspective: @string;
+}
+
+.user-select (@string) {
+    -webkit-user-select: @string;
+    user-select: @string;
+}
+.flexbox(@dir:row, @justifycontent:flex-start) {
+  display:-webkit-box;
+  display: -webkit-flex;
+  display:flex;
+  .flexdirection(@dir);
+}
+
+.flexdirection(@dir:row) when(@dir = row) {
+  -webkit-box-orient:horizontal;
+}
+
+.flexdirection(@dir:row) when(@dir = column) {
+  -webkit-box-orient:vertical;
+}
+
+.flexdirection(@dir) {
+  -webkit-flex-direction:@dir;
+  flex-direction:@dir;
+}
+
+.flexjustify(@jc: flex-start) when(@jc = flex-start) {
+  -webkit-box-pack:start;
+}
+.flexjustify(@jc: flex-start) when(@jc = flex-end) {
+  -webkit-box-pack:end;
+}
+.flexjustify(@jc: flex-start) when(@jc = space-between) {
+  -webkit-box-pack:justify;
+}
+.flexjustify(@jc) {
+  -webkit-justify-content:@jc;
+  justify-content:@jc;
+  -webkit-box-pack:@jc;
+  box-pack:@jc;
+}
+.flexflow(@string){
+  flex-flow: @string;
+  -webkit-flex-flow:@string;
+}
+.ellipsis(@wrap: nowrap){
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:@wrap;
+}
+
+.flexalign(@al){
+    /*垂直居中*/
+    /*老版本语法*/
+    -webkit-box-align: @al;
+    /*新版本语法*/
+    -webkit-align-items: @al;
+    align-items: @al;
+}
+
+.flexwrap(@wrap){
+  -webkit-flex-wrap:@wrap;
+  flex-wrap:@wrap;
+}
+
+.flex(@var: 1, @total: 1) {
+  -webkit-box-flex:@var;
+  -webkit-flex:@var;
+  flex:@var;
+}
+
+.order(@number){
+  -webkit-box-ordinal-group: @number;
+  -webkit-order: @number;
+  order: @number;
+}
+.line(@number){
+  -webkit-line-clamp:@number;
+}
+
+.center(){
+  .flexbox();
+  .flexalign(center);
+  .flexjustify(center);
+}
+
+.size(@width, @height){
+  width: @width;
+  height: @height;
+}
+
+
+._setArrow(@arrowsize, @borderColor, @borderWidth){
+    display: inline-block;
+    height: @arrowsize;
+    width: @arrowsize;
+    border-width: @borderWidth @borderWidth 0 0;
+    border-color: @borderColor;
+    border-style: solid;
+}
+
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction = top) {
+    ._setArrow(@arrowsize, @borderColor, @borderWidth);
+    transform: matrix(0.71,-0.71,0.71,0.71,0,0); // rotate(-45deg)
+}
+
+.setArrow(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = right) {
+    ._setArrow(@arrowsize, @borderColor, @borderWidth);
+    transform: matrix(0.71,0.71,-0.71,0.71,0,0); // rotate(45deg);
+
+    position: relative;
+    top: -2px;
+}
+
+.setArrow(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = down) {
+    ._setArrow(@arrowsize, @borderColor, @borderWidth);
+    transform: matrix(-0.71,0.71,-0.71,-0.71,0,0); // rotate(135deg);
+
+    position: relative;
+    top: -3px;
+}
+
+.setArrow(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = left) {
+    ._setArrow(@arrowsize, @borderColor, @borderWidth);
+    transform: matrix(-0.71,-0.71,0.71,-0.71,0,0); // rotate(-135deg);
+
+    position: relative;
+    top: -2px;
+}
