@@ -29,9 +29,9 @@ fis.hook('commonjs', {
 fis.hook('node_modules');
 
 
-fis.match('{client,pkg}/(**)', {
-    release: 'www/static/$namespace/$1',
-    url: '/static/$namespace/$1',
+fis.match('{client,pkg,node_modules}/(**)', {
+    release: 'www/static/${namespace}/$0',
+    url: '/www/static/${namespace}/$0',
     useHash: false
 });
 
@@ -96,6 +96,12 @@ fis.match('/client/views/(**)/**.{js,es,ts,vue}', {
     packTo: '/pkg/views/$1.js'
 });
 
+//require加载器不需要 mod 且打包需要放到最前面
+fis.match('mod.js', {
+    isMod: false,
+    packOrder: -100,
+    release: false
+});
 
 fis.match('::package', {
     // packager: fis.plugin('deps-pack', {
@@ -117,9 +123,9 @@ fis.match('::package', {
 
 
 fis.media('prod')
-    .match('{client,pkg}/(**)', {
-        release: '/static/$namespace/$1',
-        url: '/static/$namespace/$1',
+    .match('{client,pkg,node_modules}/(**)', {
+        release: '/static/${namespace}/$0',
+        url: '/static/${namespace}/$0',
         useHash: true
     })
     .match('*.{js,ts,es,vue}', {
