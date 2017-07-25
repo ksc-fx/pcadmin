@@ -31,7 +31,7 @@
   }
 </script>
 <style lang="less">
-@import "../../../css/common/mixin";
+@import "../../assets/css/mixin";
 .flexbox[__vuec__]{
     &.dir-row{
         .flexbox(row);

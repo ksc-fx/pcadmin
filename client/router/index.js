@@ -25,7 +25,7 @@ export default new Router({
     scrollBehavior: () => ({y: 0}),
     routes: [
         {
-            name: 'Home',
+            name: '主页',
             path: '*',
             meta: {},
             component: (resolve, reject)=> {

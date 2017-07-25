@@ -11,17 +11,26 @@ const state = {
     // 布局设置
     layout: {
         showNavbar: true,
-        showSidebar: true
+        showSidebar: false
     }
 };
 
-const actions = {};
-
-const getters = {
-    layout: (state) => state.layout
+const actions = {
+    expandMenu({commit, state}, item){
+        commit('expandMenu', item);
+    }
 };
 
-const mutations = {};
+const getters = {
+    layout: (state) => state.layout,
+    menuItems: (state) => state.menus.items
+};
+
+const mutations = {
+    expandMenu(state, item){
+        item.meta.expanded = !!!item.meta.expanded;
+    }
+};
 
 const modules = {
     menus

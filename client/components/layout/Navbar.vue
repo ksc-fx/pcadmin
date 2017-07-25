@@ -1,6 +1,6 @@
 <template>
   <section class="app-navbar animated" :class="{ slideInDown: show, slideOutUp: !show }">
-
+    <slot></slot>
   </section>
 </template>
 
