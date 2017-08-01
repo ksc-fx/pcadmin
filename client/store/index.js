@@ -11,7 +11,7 @@ const state = {
     // 布局设置
     layout: {
         showNavbar: true,
-        showSidebar: false
+        showSidebar: true
     }
 };
 

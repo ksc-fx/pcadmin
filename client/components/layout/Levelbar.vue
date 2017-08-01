@@ -1,11 +1,18 @@
 <template>
   <nav class="app-levelbar">
-    {{name}}
+    <h3>{{name}}</h3>
   </nav>
 </template>
-
+<style lang="less">
+  @import "../../assets/css/index";
+  .app-levelbar{
+    h3{
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+</style>
 <script>
-
 export default {
   components: {
 
