@@ -81,7 +81,14 @@ fis.match('**.vue:js', {
 // vue组件中的less片段处理
 fis.match('**.vue:less', {
     rExt: 'css',
-    parser: fis.plugin('less'),
+    parser: [
+        function (content) {
+            // 匹配 less中的 @import "~"
+            content =  content.replace(/@import(\s*)('|"){1}~/g,'@import$1$2node_modules/');
+            return content;
+        },
+        fis.plugin('less')
+    ],
     postprocessor: fis.plugin('autoprefixer')
 });
 

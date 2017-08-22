@@ -17,7 +17,8 @@
     "fis3-parser-vue-component": "^5.4.0",
     "fis3-postpackager-loader": "^1.3.12",
     "fis3-postprocessor-autoprefixer": "^1.0.0",
-    "fis3-preprocessor-js-require-css": "^0.1.1"
+    "fis3-preprocessor-js-require-css": "^0.1.1",
+    "pcadmin-button": "^1.0.1"
   },
   "author": "",
   "license": "ISC",
