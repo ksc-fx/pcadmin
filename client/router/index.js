@@ -28,9 +28,7 @@ export default new Router({
             name: '主页',
             path: '*',
             meta: {},
-            component: (resolve, reject)=> {
-                require.async('../views/home/index.vue', resolve);
-            }
+            component: ()=> import('../views/home/index.vue')
         },
         ...generateRoutesFromMenu(state.items)
     ]

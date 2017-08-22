@@ -14,9 +14,7 @@ export const state = {
                 {
                     name: '按钮',
                     path: '/ui/buttons',
-                    component: (resolve, reject)=> {
-                        require.async('../../views/ui/button/', resolve);
-                    },
+                    component: ()=> import('../../views/ui/button/index.vue'),
                     meta: {
 
                     }

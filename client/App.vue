@@ -87,7 +87,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import { Navbar, Sidebar, AppMain} from 'components/layout/'
+import { Navbar, Sidebar, AppMain} from './components/layout/index'
 
 export default {
     components: {
