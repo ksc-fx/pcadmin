@@ -49,6 +49,9 @@ module.exports = {
             'vue-resource'
         ]
     },
+
+    context: path.resolve(__dirname, "../"),
+
     output: {
         filename: 'static/pcadmin/[name]-[chunkHash:5].js',
         path: resolve('dist'),
