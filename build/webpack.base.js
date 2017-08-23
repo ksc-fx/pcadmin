@@ -6,8 +6,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const ManifestPlugin = require('webpack-manifest-plugin');
+//const ManifestPlugin = require('webpack-manifest-plugin');
 
+var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+
+console.log(process.env.NODE_ENV);
+
+console.log("============================start===============================");
+
+function resolve (dir) {
+    return path.join(__dirname, '..', dir)
+}
 
 var cssLoader = {
     loader: 'css-loader',
@@ -41,14 +50,21 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'static/pcadmin/[name]-[chunkHash].js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: 'static/pcadmin/[name]-[chunkHash:5].js',
+        path: resolve('dist'),
         publicPath: "/"
     },
     resolve: {
         extensions: ['.js', '.vue', '.json']
     },
-    devtool: '#cheap-module-eval-source-map', //http://www.cnblogs.com/hhhyaaon/p/5657469.html
+
+    devServer: {
+        contentBase: resolve('dist'),
+        openPage: 'view/index.html',
+        port: 9001,
+        open: true
+    },
+
     module: {
         rules: [
             {
@@ -113,24 +129,30 @@ module.exports = {
 
     plugins: [
 
-        new ManifestPlugin(),
+        //new ManifestPlugin(),
 
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['dist'],{
+            root: path.join(__dirname, '../')
+        }),
 
         new HtmlWebpackPlugin({
             filename: './view/index.html',
             template: './view/index.html',
-            title: 'testtesttesttest',
-            inject: true // 插入何处 true | 'head' | 'body' | false
+            title: '系统',
+            inject: true
         }),
 
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
+            name: 'vendor'
         }),
 
         new webpack.optimize.CommonsChunkPlugin({
           name: 'manifest',
           chunks: ['vendor']
-        })
+        }),
+
+        new FriendlyErrorsPlugin()
     ]
 };
+
+

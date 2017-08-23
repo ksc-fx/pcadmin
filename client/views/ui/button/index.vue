@@ -4,15 +4,15 @@
 <div>
     <Btn>默认</Btn>
 
-    <Btn type="primary" disabled>默认</Btn>
+    <Btn type="primary" disabled>禁用</Btn>
 
-    <Btn type="info">Dashed</Btn>
+    <Btn type="info">info</Btn>
 
-    <Btn type="success">Danger</Btn>
+    <Btn type="success">success</Btn>
 
-    <Btn type="warning">Danger</Btn>
+    <Btn type="warning">warning</Btn>
 
-    <Btn type="danger">Danger</Btn>
+    <Btn type="danger">danger</Btn>
 </div>
 </div>
 </template>
