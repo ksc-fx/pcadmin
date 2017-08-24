@@ -6,18 +6,15 @@
 
 <script>
 export default {
-    name: "Button",
+    name: 'Button',
     props: {
         type: {
             type: String,
-            default: "default"
+            default: 'default'
         }
     }
-}
+};
 </script>
 
 <style lang="less">
-    .pc-btn{
-
-    }
 </style>

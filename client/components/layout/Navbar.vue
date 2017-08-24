@@ -18,26 +18,23 @@
 </style>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
 
-  components: {
+    components: {
+    },
+    props: {
+        show: Boolean
+    },
+    computed: mapGetters({
+        sidebar: 'sidebar'
+    }),
 
-  },
-
-  props: {
-    show: Boolean
-  },
-
-  computed: mapGetters({
-    sidebar: 'sidebar'
-  }),
-
-  methods: {
-    ...mapActions([
-      'toggleSidebar'
-    ])
-  }
-}
+    methods: {
+        ...mapActions([
+            'toggleSidebar'
+        ])
+    }
+};
 </script>

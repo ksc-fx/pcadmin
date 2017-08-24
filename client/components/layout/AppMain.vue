@@ -14,28 +14,27 @@
 </template>
 
 <script>
-import Levelbar from './Levelbar'
-import { mapGetters } from 'vuex'
-
+import Levelbar from './Levelbar';
+import { mapGetters } from 'vuex';
 
 export default {
-  computed: {
-    ...mapGetters({
-          layout: 'layout'
-    }),
-    hiddenSidebarStyle () {
-      return !this.layout.showSidebar ? { 'margin-left': 0 } : null
+    computed: {
+        ...mapGetters({
+            layout: 'layout'
+        }),
+        hiddenSidebarStyle () {
+            return !this.layout.showSidebar ? { 'margin-left': 0 } : null;
+        }
+    },
+    data () {
+        return {
+            showLevelbar: true
+        };
+    },
+    components: {
+        Levelbar
     }
-  },
-  data(){
-    return {
-      showLevelbar: true
-    }
-  },
-  components: {
-    Levelbar
-  }
-}
+};
 </script>
 
 <style lang="less">

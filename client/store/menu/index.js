@@ -8,22 +8,21 @@ export const state = {
             name: 'UI',
             meta: {
                 icon: 'fa-bar-chart-o',
-                expanded: true,
+                expanded: true
             },
             children: [
                 {
                     name: '按钮',
                     path: '/ui/buttons',
-                    component: ()=> import('../../views/ui/button/index.vue'),
+                    component: () => import('../../views/ui/button/index.vue'),
                     meta: {
-
                     }
                 }
             ]
         }
     ]
-}
+};
 
 export default {
     state
-}
+};

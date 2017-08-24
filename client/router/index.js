@@ -1,22 +1,21 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import {state} from '../store/menu'
+import Vue from 'vue';
+import Router from 'vue-router';
+import {state} from '../store/menu';
 
-Vue.use(Router)
+Vue.use(Router);
 
-
-//2 levels.
+// 2 levels.
 function generateRoutesFromMenu (menu = [], routes = []) {
     for (let i = 0, l = menu.length; i < l; i++) {
-        let item = menu[i]
+        let item = menu[i];
         if (item.path) {
-            routes.push(item)
+            routes.push(item);
         }
         if (!item.component) {
-            generateRoutesFromMenu(item.children, routes)
+            generateRoutesFromMenu(item.children, routes);
         }
     }
-    return routes
+    return routes;
 }
 
 export default new Router({
@@ -28,10 +27,8 @@ export default new Router({
             name: '主页',
             path: '*',
             meta: {},
-            component: ()=> import('../views/home/index.vue')
+            component: () => import('../views/home/index.vue')
         },
         ...generateRoutesFromMenu(state.items)
     ]
-})
-
-
+});

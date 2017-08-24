@@ -86,30 +86,30 @@
 </style>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
-import { Navbar, Sidebar, AppMain} from './components/layout/index'
+import { mapGetters } from 'vuex';
+import { Navbar, Sidebar, AppMain } from './components/layout/index';
 
 export default {
     components: {
         Navbar,
         Sidebar,
-        AppMain,
+        AppMain
     },
-    data(){
+    data () {
         return {
 
-        }
+        };
     },
-    computed:{
+    computed: {
         ...mapGetters([
-            "layout"
+            'layout'
         ])
     },
-    mounted(){
+    mounted () {
         this.$http.get('http://www.a.com')
-        .catch((resp)=>{
-            console.log(resp)
-        });
+            .catch((resp) => {
+                console.log(resp);
+            });
     }
-}
+};
 </script>

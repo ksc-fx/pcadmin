@@ -1,11 +1,10 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import VueResource from 'vue-resource'
-import menus from './menu'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import VueResource from 'vue-resource';
+import menus from './menu';
 
 Vue.use(Vuex);
 Vue.use(VueResource);
-
 
 const state = {
     // 布局设置
@@ -16,7 +15,7 @@ const state = {
 };
 
 const actions = {
-    expandMenu({commit, state}, item){
+    expandMenu ({commit, state}, item) {
         commit('expandMenu', item);
     }
 };
@@ -27,8 +26,8 @@ const getters = {
 };
 
 const mutations = {
-    expandMenu(state, item){
-        item.meta.expanded = !!!item.meta.expanded;
+    expandMenu (state, item) {
+        item.meta.expanded = !item.meta.expanded;
     }
 };
 
@@ -36,14 +35,13 @@ const modules = {
     menus
 };
 
-
 const store = new Vuex.Store({
     strict: true,
     actions,
     getters,
     modules,
     state,
-    mutations,
+    mutations
 });
 
-export default store
+export default store;

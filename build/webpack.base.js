@@ -1,21 +1,21 @@
 var path = require('path');
 
-const webpack = require("webpack");
+const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-//const ManifestPlugin = require('webpack-manifest-plugin');
+// const ManifestPlugin = require('webpack-manifest-plugin');
 
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 console.log(process.env.NODE_ENV);
 
-console.log("============================start===============================");
+console.log('============================start===============================');
 
 function resolve (dir) {
-    return path.join(__dirname, '..', dir)
+    return path.join(__dirname, '..', dir);
 }
 
 var cssLoader = {
@@ -24,19 +24,19 @@ var cssLoader = {
         minimize: false,
         sourceMap: true
     }
-}
+};
 
 function generateLoaders (loader, loaderOptions) {
-    var loaders = [cssLoader]
+    var loaders = [cssLoader];
     if (loader) {
         loaders.push({
             loader: loader + '-loader',
             options: Object.assign({}, loaderOptions, {
                 sourceMap: true
             })
-        })
+        });
     }
-    return ['vue-style-loader'].concat(loaders)
+    return ['vue-style-loader'].concat(loaders);
 }
 
 module.exports = {
@@ -50,12 +50,12 @@ module.exports = {
         ]
     },
 
-    context: path.resolve(__dirname, "../"),
+    context: path.resolve(__dirname, '../'),
 
     output: {
         filename: 'static/pcadmin/[name]-[chunkHash:5].js',
         path: resolve('dist'),
-        publicPath: "/"
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.js', '.vue', '.json']
@@ -65,11 +65,21 @@ module.exports = {
         contentBase: resolve('dist'),
         openPage: 'view/index.html',
         port: 9001,
-        open: true
+        open: false
     },
 
     module: {
         rules: [
+            {
+                test: /\.(js|vue)$/,
+                loader: 'eslint-loader',
+                enforce: 'pre',
+                exclude: [new RegExp(`node_modules\\${path.sep}(?!pcadmin-.*)`)],
+                // include: '/client/',
+                options: {
+                    formatter: require('eslint-friendly-formatter')
+                }
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -89,7 +99,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
+                exclude: /node_modules/
             },
             {
                 test: /\.css$/,
@@ -132,9 +142,9 @@ module.exports = {
 
     plugins: [
 
-        //new ManifestPlugin(),
+        // new ManifestPlugin(),
 
-        new CleanWebpackPlugin(['dist'],{
+        new CleanWebpackPlugin(['dist'], {
             root: path.join(__dirname, '../')
         }),
 
@@ -150,12 +160,10 @@ module.exports = {
         }),
 
         new webpack.optimize.CommonsChunkPlugin({
-          name: 'manifest',
-          chunks: ['vendor']
+            name: 'manifest',
+            chunks: ['vendor']
         }),
 
         new FriendlyErrorsPlugin()
     ]
 };
-
-

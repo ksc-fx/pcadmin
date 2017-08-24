@@ -13,15 +13,15 @@
 }
 </style>
 <script>
-import Test from './test.vue'
+import Test from './test.vue';
 export default{
-    data(){
-        return{
-            msg:'hello vue'
-        }
+    data () {
+        return {
+            msg: 'hello vue'
+        };
     },
-    components:{
+    components: {
         Test
     }
-}
+};
 </script>

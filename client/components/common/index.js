@@ -1,1 +1,1 @@
-export FlexBox from './flexBox.vue'
+export FlexBox from './flexBox.vue';

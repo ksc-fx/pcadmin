@@ -9,12 +9,12 @@
 </style>
 <script>
     export default{
-        data(){
-            return{
-                msg:'test vue'
-            }
+        data () {
+            return {
+                msg: 'test vue'
+            };
         },
-        components:{
+        components: {
         }
-    }
+    };
 </script>
