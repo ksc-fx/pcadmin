@@ -1,55 +1,46 @@
 <template>
-    <div>
-        <button-ele @click="buttonClick" params="paramsstring">默认按钮</button-ele>
-        <button-ele @click="buttonClick" :params="msg" type="primary">主要按钮</button-ele>
-        <button-ele @click="buttonClick" type="text">文字按钮</button-ele>
+    <div class="demo">
+        <div class="demo">
+            <BtnDemo></BtnDemo>
+        </div>
 
-        <button-ele @click="buttonClick" :radius="false" color="green">绿色</button-ele>
-        <button-ele @click="buttonClick" color="blue">蓝色</button-ele>
-        <button-ele @click="buttonClick" color="red">红色</button-ele>
-        <button-ele @click="buttonClick" color="orange">橘色</button-ele>
-        <button-ele @click="buttonClick" color="orange" :disabled="true">橘色</button-ele>
+        <div class="demo-text">
+            <pre><code class="html">{{text}}</code></pre>
+        </div>
 
-        <button-ele @click="buttonClick" type="primary" color="green">绿色</button-ele>
-        <button-ele @click="buttonClick" type="primary" color="blue">蓝色</button-ele>
-        <button-ele @click="buttonClick" type="primary" color="red">红色</button-ele>
-        <button-ele @click="buttonClick" type="primary" color="orange">橘色</button-ele>
-        <button-ele @click="buttonClick" type="primary" color="orange" :disabled="true">橘色</button-ele>
-
-        <button-ele @click="buttonClick" type="text" color="green">绿色</button-ele>
-        <button-ele @click="buttonClick" type="text" color="blue">蓝色</button-ele>
-        <button-ele @click="buttonClick" type="text" color="red">红色</button-ele>
-        <button-ele @click="buttonClick" type="text" color="orange" :disabled="true">橘色</button-ele>
-
-
-        <button-ele @click="buttonClick" :disabled="true">主要按钮</button-ele>
-        <button-ele @click="buttonClick" type="primary" :disabled="true">主要按钮</button-ele>
-        <button-ele @click="buttonClick" type="text" :disabled="true">文字按钮</button-ele>
+        <div class="markdown-body" v-html="msg"></div>
 
     </div>
 </template>
-<style>
-
+<style lang="less">
+.demo{
+    .markdown-body,.demo-text,.demo{
+        padding:15px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+}
 </style>
 <script>
-import Btn, {} from '../../../components/button/';
-
-import buttonEle from 'pcadmin-button';
-
+import BtnDemo, {} from 'pcadmin-button/demo/index.vue';
+import BtnDemoText from 'pcadmin-button/demo/index.text';
+import BtnMd from 'pcadmin-button/README.md';
 export default{
     data () {
         return {
-            msg: 'button hello vue'
+            msg: BtnMd,
+            text: BtnDemoText
         };
     },
+    mounted () {
+        window.hljs.initHighlightingOnLoad();
+    },
     methods: {
-        buttonClick (event) {
-            console.log('点击按钮');
-        }
+
     },
     components: {
-        Btn,
-        buttonEle
+        BtnDemo
     }
 };
 </script>
