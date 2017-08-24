@@ -1,7 +1,7 @@
 <template>
     <div class="demo">
         <div class="demo">
-            <BtnDemo></BtnDemo>
+            <Demo></Demo>
         </div>
 
         <div class="demo-text">
@@ -23,14 +23,15 @@
 }
 </style>
 <script>
-import BtnDemo, {} from 'pcadmin-button/demo/index.vue';
-import BtnDemoText from 'pcadmin-button/demo/index.text';
-import BtnMd from 'pcadmin-button/README.md';
+import Demo, {} from 'pcadmin-button/demo/index.vue';
+import DemoText from 'pcadmin-button/demo/index.code';
+import Md from 'pcadmin-button/README.md';
+
 export default{
     data () {
         return {
-            msg: BtnMd,
-            text: BtnDemoText
+            msg: Md,
+            text: DemoText
         };
     },
     mounted () {
@@ -40,7 +41,7 @@ export default{
 
     },
     components: {
-        BtnDemo
+        Demo
     }
 };
 </script>

@@ -141,18 +141,18 @@ module.exports = {
                 test: /\.md$/,
                 use: [
                     {
-                        loader: "html-loader"
+                        loader: 'html-loader'
                     },
                     {
-                        loader: "md-loader"
+                        loader: 'md-loader'
                     }
                 ]
             },
             {
-                test: /\.text$/,
+                test: /\.code$/,
                 use: [
                     {
-                        loader: "html-loader"
+                        loader: 'html-loader'
                     }
                 ]
             }
