@@ -17,6 +17,13 @@ export const state = {
                     component: () => import('../../views/ui/button/index.vue'),
                     meta: {
                     }
+                },
+                {
+                    name: '提示框',
+                    path: '/ui/dialog',
+                    component: () => import('../../views/ui/dialog/index.vue'),
+                    meta: {
+                    }
                 }
             ]
         }

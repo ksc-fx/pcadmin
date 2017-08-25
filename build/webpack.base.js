@@ -141,7 +141,7 @@ module.exports = {
                 test: /\.md$/,
                 use: [
                     {
-                        loader: "html-loader"
+                        loader: 'html-loader'
                     },
                     {
                         loader: "markdown-loader"
@@ -149,10 +149,10 @@ module.exports = {
                 ]
             },
             {
-                test: /\.text$/,
+                test: /\.code$/,
                 use: [
                     {
-                        loader: "html-loader"
+                        loader: 'html-loader'
                     }
                 ]
             }
