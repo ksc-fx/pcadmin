@@ -50,6 +50,7 @@
   "dependencies": {
     "pcadmin-base": "^1.0.2",
     "pcadmin-button": "^1.0.7",
+    "pcadmin-dialog": "^1.0.0",
     "vue": "^2.3.4",
     "vue-nprogress": "^0.1.5",
     "vue-resource": "^1.3.4",
