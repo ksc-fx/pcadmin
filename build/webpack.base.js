@@ -65,7 +65,7 @@ module.exports = {
         contentBase: resolve('dist'),
         openPage: 'view/index.html',
         port: 9001,
-        open: false
+        open: true
     },
 
     module: {
@@ -136,6 +136,25 @@ module.exports = {
                 options: {
                     limit: 10000
                 }
+            },
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: 'html-loader'
+                    },
+                    {
+                        loader: 'md-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.code$/,
+                use: [
+                    {
+                        loader: 'html-loader'
+                    }
+                ]
             }
         ]
     },
