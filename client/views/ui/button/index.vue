@@ -5,10 +5,12 @@
         </div>
 
         <div class="demo-text">
-            <pre><code class="html">{{text}}</code></pre>
+            <pre><code class="lang-html">{{text}}</code></pre>
         </div>
 
-        <div class="markdown-body" v-html="msg"></div>
+        <div class="markdown-body" v-html="msg">
+
+        </div>
 
     </div>
 </template>
@@ -34,7 +36,7 @@ export default{
         };
     },
     mounted () {
-        window.hljs.initHighlightingOnLoad();
+        window.hljs.highlightBlock(this.$el);
     },
     methods: {
 

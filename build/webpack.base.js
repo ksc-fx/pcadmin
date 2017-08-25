@@ -144,7 +144,7 @@ module.exports = {
                         loader: "html-loader"
                     },
                     {
-                        loader: "md-loader"
+                        loader: "markdown-loader"
                     }
                 ]
             },

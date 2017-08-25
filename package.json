@@ -35,7 +35,7 @@
     "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
-    "md-loader": "^0.1.0",
+    "markdown-loader": "^2.0.1",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "vue-loader": "^13.0.4",
