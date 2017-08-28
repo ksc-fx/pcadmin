@@ -8,24 +8,28 @@ export const state = {
             name: 'UI',
             meta: {
                 icon: 'fa-bar-chart-o',
-                expanded: true,
+                expanded: true
             },
             children: [
                 {
                     name: '按钮',
                     path: '/ui/buttons',
-                    component: (resolve, reject)=> {
-                        require.async('../../views/ui/button/', resolve);
-                    },
+                    component: () => import('../../views/ui/button/index.vue'),
                     meta: {
-
+                    }
+                },
+                {
+                    name: '提示框',
+                    path: '/ui/dialog',
+                    component: () => import('../../views/ui/dialog/index.vue'),
+                    meta: {
                     }
                 }
             ]
         }
     ]
-}
+};
 
 export default {
     state
-}
+};

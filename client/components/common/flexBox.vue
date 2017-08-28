@@ -8,27 +8,27 @@
 </template>
 
 <script>
-  export default {
-        name: "flexBox",
-        props: {
-            dir: {
-                type: String,
-                default: "row"
-            },
-            justify: {
-                type: String,
-                default: "center"
-            },
-            align: {
-                type: String,
-                default: "center"
-            },
-            wrap: {
-                type: String,
-                default: "nowrap"
-            }
+export default {
+    name: 'flexBox',
+    props: {
+        dir: {
+            type: String,
+            default: 'row'
+        },
+        justify: {
+            type: String,
+            default: 'center'
+        },
+        align: {
+            type: String,
+            default: 'center'
+        },
+        wrap: {
+            type: String,
+            default: 'nowrap'
         }
-  }
+    }
+};
 </script>
 <style lang="less">
 @import "../../assets/css/mixin";

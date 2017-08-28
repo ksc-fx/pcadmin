@@ -1,9 +1,9 @@
-import  Vue from 'vue'
-import  router from './router'
-import  store from './store'
-import  App from './App.vue'
-import  NProgress from 'vue-nprogress'
-import  {FlexBox} from 'components/common/'
+import Vue from 'vue';
+import router from './router';
+import store from './store';
+import App from './App.vue';
+import NProgress from 'vue-nprogress';
+import {FlexBox} from './components/common/index';
 
 Vue.use(NProgress, {});
 const nprogress = new NProgress({ parent: '.nprogress-container' });

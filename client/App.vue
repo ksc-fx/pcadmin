@@ -31,6 +31,7 @@
 </template>
 
 <style lang="less">
+    @import '~pcadmin-base/src/css/reset.css';
     @import "./assets/css/index";
     html {
         background-color: @bgColor;
@@ -86,30 +87,30 @@
 </style>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
-import { Navbar, Sidebar, AppMain} from 'components/layout/'
+import { mapGetters } from 'vuex';
+import { Navbar, Sidebar, AppMain } from './components/layout/index';
 
 export default {
     components: {
         Navbar,
         Sidebar,
-        AppMain,
+        AppMain
     },
-    data(){
+    data () {
         return {
 
-        }
+        };
     },
-    computed:{
+    computed: {
         ...mapGetters([
-            "layout"
+            'layout'
         ])
     },
-    mounted(){
+    mounted () {
         this.$http.get('http://www.a.com')
-        .catch((resp)=>{
-            console.log(resp)
-        });
+            .catch((resp) => {
+                console.log(resp);
+            });
     }
-}
+};
 </script>

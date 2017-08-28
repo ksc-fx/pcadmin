@@ -1,5 +1,5 @@
-export Navbar from './Navbar'
+export Navbar from './Navbar';
 
-export Sidebar from './Sidebar'
+export Sidebar from './Sidebar';
 
-export AppMain from './AppMain'
+export AppMain from './AppMain';

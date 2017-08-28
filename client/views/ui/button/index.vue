@@ -1,14 +1,24 @@
 <template>
+<<<<<<< HEAD
 <div>
     按钮按钮
     <div>
         按钮
         <!-- <Btn>默认</Btn>
+=======
+    <div class="demo">
+        <div class="demo-case">
+            <Demo></Demo>
+        </div>
+>>>>>>> github/change-webpack
 
-        <Btn type="primary" disabled>默认</Btn>
+        <div class="demo-code" ref='code'>
+            <pre><code class="lang-html">{{Code}}</code></pre>
+        </div>
 
-        <Btn type="info">Dashed</Btn>
+        <div class="markdown-body demo-md" v-html="Md" ref='md'></div>
 
+<<<<<<< HEAD
         <Btn type="success">Danger</Btn>
 
         <Btn type="warning">Danger</Btn>
@@ -42,23 +52,46 @@
     <btn @click="buttonClick" type="text" :disabled="true">文字按钮</btn>
 
   </div>
+=======
+>>>>>>> github/change-webpack
     </div>
-
-</div>
 </template>
-<style>
-
+<style lang="less">
+.demo{
+    .demo-md,.demo-code,.demo-case{
+        padding:15px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+}
 </style>
 <script>
+<<<<<<< HEAD
 // import Btn from 'pcadmin-button'
 import Btn from 'pcadmin-button';
 console.log(Btn);
+=======
+import Demo, {} from 'pcadmin-button/demo/index.vue';
+import Code from 'pcadmin-button/demo/index.code';
+import Md from 'pcadmin-button/README.md';
+require('highlight.js/styles/default.css');
+
+var lazymodule = (module) => () => import(`${module}/demo/index.vue`);
+
+>>>>>>> github/change-webpack
 export default{
-    data(){
-        return{
-            msg:'button hello vue'
-        }
+    data () {
+        return {
+            Md,
+            Code
+        };
     },
+    mounted () {
+        window.hljs.highlightBlock(this.$refs.code);
+        window.hljs.highlightBlock(this.$refs.md);
+    },
+<<<<<<< HEAD
     methods:{
         buttonClick(event) {
             console.log('点击按钮');
@@ -67,6 +100,13 @@ export default{
     },
     components:{
         Btn
+=======
+    methods: {
+
+    },
+    components: {
+        Demo
+>>>>>>> github/change-webpack
     }
-}
+};
 </script>
