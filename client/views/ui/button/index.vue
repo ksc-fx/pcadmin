@@ -1,22 +1,20 @@
 <template>
     <div class="demo">
-        <div class="demo">
+        <div class="demo-case">
             <Demo></Demo>
         </div>
 
-        <div class="demo-text">
-            <pre><code class="lang-html">{{text}}</code></pre>
+        <div class="demo-code" ref='code'>
+            <pre><code class="lang-html">{{Code}}</code></pre>
         </div>
 
-        <div class="markdown-body" v-html="msg">
-
-        </div>
+        <div class="markdown-body demo-md" v-html="Md" ref='md'></div>
 
     </div>
 </template>
 <style lang="less">
 .demo{
-    .markdown-body,.demo-text,.demo{
+    .demo-md,.demo-code,.demo-case{
         padding:15px;
         background-color: #fff;
         border-radius: 10px;
@@ -26,18 +24,22 @@
 </style>
 <script>
 import Demo, {} from 'pcadmin-button/demo/index.vue';
-import DemoText from 'pcadmin-button/demo/index.code';
+import Code from 'pcadmin-button/demo/index.code';
 import Md from 'pcadmin-button/README.md';
+require('highlight.js/styles/default.css');
+
+var lazymodule = (module) => () => import(`${module}/demo/index.vue`);
 
 export default{
     data () {
         return {
-            msg: Md,
-            text: DemoText
+            Md,
+            Code
         };
     },
     mounted () {
-        window.hljs.highlightBlock(this.$el);
+        window.hljs.highlightBlock(this.$refs.code);
+        window.hljs.highlightBlock(this.$refs.md);
     },
     methods: {
 
