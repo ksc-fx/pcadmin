@@ -18,38 +18,35 @@
 </style>
 
 <script>
-
     import buttonEl from 'pcadmin-button';
-    import dialogEle from "pcadmin-dialog";
+    import dialogEle from 'pcadmin-dialog';
 
     export default {
-        data(){
+        data () {
             return {
-                isShow : false
-            }
+                isShow: false
+            };
         },
-        mounted(){
-
+        mounted () {
         },
         methods: {
 
-            onClick(){
-                this.isShow =  true;
+            onClick () {
+                this.isShow = true;
             },
-            onConfirm(){
+            onConfirm () {
                 console.log('onConfirm');
-                this.isShow =  false;
-
+                this.isShow = false;
             },
-            onCancel(){
+            onCancel () {
                 console.log('on cancel....');
-                this.isShow =  false;
+                this.isShow = false;
             }
         },
         components: {
             buttonEl,
             dialogEle
         }
-    }
+    };
 </script>
 
