@@ -24,6 +24,13 @@ export const state = {
                     component: () => import('../../views/ui/dialog/index.vue'),
                     meta: {
                     }
+                },
+                {
+                    name: '下拉框',
+                    path: '/ui/select',
+                    component: () => import('../../views/ui/select/index.vue'),
+                    meta: {
+                    }
                 }
             ]
         }

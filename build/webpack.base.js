@@ -64,22 +64,21 @@ module.exports = {
     devServer: {
         contentBase: resolve('dist'),
         openPage: 'view/index.html',
-        port: 9001,
         open: true
     },
 
     module: {
         rules: [
-            {
-                test: /\.(js|vue)$/,
-                loader: 'eslint-loader',
-                enforce: 'pre',
-                exclude: [new RegExp(`node_modules\\${path.sep}(?!pcadmin-.*)`)],
-                // include: '/client/',
-                options: {
-                    formatter: require('eslint-friendly-formatter')
-                }
-            },
+            // {
+            //     test: /\.(js|vue)$/,
+            //     loader: 'eslint-loader',
+            //     enforce: 'pre',
+            //     exclude: [new RegExp(`node_modules\\${path.sep}(?!pcadmin-.*)`)],
+            //     // include: '/client/',
+            //     options: {
+            //         formatter: require('eslint-friendly-formatter')
+            //     }
+            // },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',

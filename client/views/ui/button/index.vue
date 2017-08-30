@@ -28,8 +28,6 @@ import Code from 'pcadmin-button/demo/index.code';
 import Md from 'pcadmin-button/README.md';
 require('highlight.js/styles/default.css');
 
-var lazymodule = (module) => () => import(`${module}/demo/index.vue`);
-
 export default{
     data () {
         return {
