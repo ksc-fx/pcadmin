@@ -40,7 +40,7 @@
 </template>
 
 <style lang="less">
-    @import '~pcadmin-base/src/css/reset.css';
+    @import '~pcadmin-base/src/css/reset.less';
     @import "./assets/css/index";
     html {
         background-color: @bgColor;
