@@ -1,17 +1,37 @@
 <template>
-  <nav class="app-levelbar">
+  <flex-box class="app-levelbar" justify="space-between">
     <h3>{{name}}</h3>
-  </nav>
+    <flex-box class="routers">
+      <div v-for="(item, index) in list" :key="index" class="router">
+          <span v-if="index === list.length - 1">{{ item.name }}</span>
+          <router-link :to="item.path" v-else>{{ item.name }}</router-link>
+      </div>
+    </flex-box>
+  </flex-box>
 </template>
 <style lang="less">
-  @import "../../assets/css/index";
-  .app-levelbar{
+@import "../../assets/css/index";
+.app-levelbar{
     h3{
       font-weight: 600;
       font-size: 18px;
     }
     margin-bottom: 15px;
-  }
+    .routers{
+        .router{
+            display: inline-block;
+            &:before{
+                color: #4a4a4a;
+                content: "\0002f";
+                display: inline-block;
+                padding: 0 10px;
+            }
+            &:first-child:before{
+                display: none;
+            }
+        }
+    }
+}
 </style>
 <script>
 export default {

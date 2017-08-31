@@ -13,20 +13,19 @@
     </div>
 </template>
 <style lang="less">
-.demo{
-    .demo-md,.demo-code,.demo-case{
-        padding:15px;
-        background-color: #fff;
-        border-radius: 10px;
-        margin-bottom: 10px;
+    .demo{
+        .demo-md,.demo-code,.demo-case{
+            padding:15px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
     }
-}
 </style>
 <script>
 import Demo, {} from 'pcadmin-button/demo/index.vue';
 import Code from 'pcadmin-button/demo/index.code';
 import Md from 'pcadmin-button/README.md';
-require('highlight.js/styles/default.css');
 
 export default{
     data () {
@@ -40,7 +39,6 @@ export default{
         window.hljs.highlightBlock(this.$refs.md);
     },
     methods: {
-
     },
     components: {
         Demo

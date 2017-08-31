@@ -1,7 +1,13 @@
+<!--
+@file: 主APP引入文件
+-->
 <template>
   <div id="app" class="pcadmin">
+      <!--请求进度条-->
       <div class="nprogress-container"></div>
+      <!--顶部导航-->
       <Navbar :show="layout.showNavbar" v-if="layout.showNavbar">
+            <!--navbar 内容-->
             <flex-box class="hd" justify="space-between">
                 <flex-box class="logo">
                     <i class="fa fa-linux" aria-hidden="true"></i>
@@ -24,8 +30,11 @@
                     用户信息
                 </flex-box>
             </flex-box>
+          <!--navbar 内容结束-->
       </Navbar>
+      <!--侧边栏-->
       <Sidebar :show="layout.showSidebar" v-if="layout.showSidebar"></Sidebar>
+      <!--页面内容-->
       <AppMain></AppMain>
   </div>
 </template>
