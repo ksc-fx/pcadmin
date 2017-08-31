@@ -2,7 +2,7 @@
  * Created by mac on 2016/12/8.
  */
 <template>
-  <div class="flexbox" :class="['dir-' + this.dir, 'justify-' + this.justify, 'align-' + this.align, 'wrap-'+ this.wrap]" __vuec__>
+  <div class="flexbox" :class="['dir-' + this.dir, 'justify-' + this.justify, 'align-' + this.align, 'wrap-'+ this.wrap]">
       <slot></slot>
   </div>
 </template>
@@ -30,9 +30,9 @@ export default {
     }
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 @import "../../assets/css/mixin";
-.flexbox[__vuec__]{
+.flexbox{
     &.dir-row{
         .flexbox(row);
     }

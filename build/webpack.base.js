@@ -58,7 +58,10 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
-        extensions: ['.js', '.vue', '.json']
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            '@': resolve('pcadmins')
+        }
     },
 
     devServer: {
