@@ -26,6 +26,7 @@
 import Demo, {} from 'pcadmin-button/demo/index.vue';
 import Code from 'pcadmin-button/demo/index.code';
 import Md from 'pcadmin-button/README.md';
+
 export default{
     data () {
         return {
