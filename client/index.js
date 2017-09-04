@@ -6,7 +6,7 @@ import NProgress from 'vue-nprogress';
 import {FlexBox} from './components/common/index';
 
 Vue.use(NProgress, {});
-const nprogress = new NProgress({ parent: '.nprogress-container' });
+const nprogress = new NProgress({ parent: '.app-nprogress' });
 
 // 全局组件
 Vue.component('FlexBox', FlexBox);

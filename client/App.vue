@@ -3,8 +3,6 @@
 -->
 <template>
   <div id="app" class="pcadmin">
-      <!--请求进度条-->
-      <div class="nprogress-container"></div>
       <!--顶部导航-->
       <Navbar :show="layout.showNavbar" v-if="layout.showNavbar">
             <!--navbar 内容-->
@@ -17,12 +15,6 @@
                 <flex-box class="cmenus">
                     <a href="#/home">
                         <span>主页</span>
-                    </a>
-                    <a href="#/home">
-                        <span>主页1</span>
-                    </a>
-                    <a href="#/home">
-                        <span>主页2</span>
                     </a>
                 </flex-box>
 
@@ -42,32 +34,10 @@
 <style lang="less">
     @import '~pcadmin-base/src/css/reset.less';
     @import "./assets/css/index";
-    html {
-        background-color: @bgColor;
-    }
     .animated {
         animation-duration: .35s;
     }
-    .nprogress-container {
-        position: fixed !important;
-        width: 100%;
-        height: 50px;
-        z-index: @maxZindex*2;
-        pointer-events: none;
-        #nprogress {
-            .bar {
-                height: 3px;
-                background: @progressColor;
-            }
-            .peg {
-                box-shadow: 0 0 20px @progressColor, 0 0 10px @progressColor;
-            }
-            .spinner-icon {
-                border-top-color: @progressColor;
-                border-left-color: @progressColor;
-            }
-        }
-    }
+    
     .pcadmin{
         .hd{
             height: 100%;

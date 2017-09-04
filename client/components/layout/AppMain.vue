@@ -31,13 +31,16 @@ export default {
             showLevelbar: true
         };
     },
+    methods:{
+
+    },
     components: {
         Levelbar
     }
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   @import "../../assets/css/index";
   .app-main {
     padding-top: @navbarHeight;

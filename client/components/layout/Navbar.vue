@@ -1,12 +1,12 @@
 <template>
-  <section class="app-navbar animated" :class="{ slideInDown: show, slideOutUp: !show }">
+  <section class="app-navbar animated">
+    <nprogress></nprogress>        
     <slot></slot>
   </section>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 @import "../../assets/css/index";
-
 .app-navbar {
   position: fixed;
   min-width: 100%;
@@ -18,23 +18,10 @@
 </style>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-
+import Nprogress from './Nprogress';
 export default {
-
     components: {
-    },
-    props: {
-        show: Boolean
-    },
-    computed: mapGetters({
-        sidebar: 'sidebar'
-    }),
-
-    methods: {
-        ...mapActions([
-            'toggleSidebar'
-        ])
+        Nprogress
     }
 };
 </script>
