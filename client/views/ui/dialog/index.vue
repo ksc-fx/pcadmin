@@ -27,7 +27,7 @@
     import Demo, {} from 'pcadmin-dialog/demo/index.vue';
     import Code from 'pcadmin-dialog/demo/index.code';
     import Md from 'pcadmin-dialog/README.md';
-    require('highlight.js/styles/default.css');
+
     export default{
         data () {
             return {

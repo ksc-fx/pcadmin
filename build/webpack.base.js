@@ -6,6 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const autoprefixer = require('autoprefixer');
+
 // const ManifestPlugin = require('webpack-manifest-plugin');
 
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
@@ -89,6 +91,9 @@ module.exports = {
                     loaders: {
                         css: generateLoaders(),
                         less: generateLoaders('less')
+                    },
+                    postcss: function () {
+                        return [autoprefixer({browsers: ['last 2 versions']})];
                     },
                     transformToRequire: {
                         video: 'src',
