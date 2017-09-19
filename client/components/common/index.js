@@ -1,1 +1,5 @@
-export FlexBox from './flexBox.vue';
+import FlexBox from './flexBox.vue';
+
+export default {
+    FlexBox
+}

@@ -1,5 +1,5 @@
 <template>
-  <section class="app-navbar animated">
+  <section class="app-navbar animated slideInDown">
     <nprogress></nprogress>        
     <slot></slot>
   </section>
