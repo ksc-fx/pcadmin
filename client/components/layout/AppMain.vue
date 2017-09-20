@@ -31,7 +31,7 @@ export default {
             showLevelbar: true
         };
     },
-    methods:{
+    methods: {
 
     },
     components: {
