@@ -171,6 +171,11 @@ module.exports = {
                 }
             },
             {
+                // 使所有以 .json5 结尾的文件使用 `json5-loader`
+                test: /\.json5$/,
+                loader: 'json5-loader'
+            },
+            {
                 test: /\.md$/,
                 use: [
                     {
