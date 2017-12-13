@@ -7,7 +7,7 @@
         <ul class="menu-list sidebar-bd">
             <li v-for="(item, index) in menuItems" v-bind:key="index">
                 <router-link :to="item.path" :exact="true"  v-if="item.path" @click.native="toggle(index, item)">
-                    <span class="icon icon-title"><i :class="['fa', item.meta.icon]"></i></span>
+                    <span class="icon icon-title"><i :class="['fa', item.meta.icon||'fa-external-link']"></i></span>
                     {{ item.meta.label || item.name }}
                     <span class="icon icon-expand" v-if="item.children && item.children.length">
                         <i class="fa fa-angle-down"></i>
@@ -27,6 +27,7 @@
                 <ul v-show="item.meta.expanded" v-if="item.children && item.children.length">
                     <li v-for="(subItem, index) in item.children" v-bind:key="index">
                         <router-link :to="generatePath(item, subItem)">
+                            <span class="icon icon-title" v-if="subItem.meta.icon"><i :class="['fa', subItem.meta.icon]"></i></span>
                             {{ subItem.meta && subItem.meta.label || subItem.name }}
                         </router-link>
                     </li>
