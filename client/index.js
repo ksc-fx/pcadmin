@@ -10,7 +10,7 @@ const nprogress = new NProgress({ parent: '.app-nprogress' });
 
 // 全局组件
 // 全局组件
-Object.keys(CommonComp).forEach((v, i) => {
+Object.keys(CommonComp).forEach(v => {
     Vue.component(v, CommonComp[v]);
 });
 

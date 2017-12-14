@@ -6,16 +6,16 @@
 </div>
 </template>
 <style lang="less">
-.home{
-    .test{
+.home {
+    .test {
         height: 1000px;
     }
 }
 </style>
 <script>
 import Test from './test.vue';
-export default{
-    data () {
+export default {
+    data() {
         return {
             msg: 'hello vue'
         };

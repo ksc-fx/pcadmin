@@ -10,23 +10,23 @@
   </flex-box>
 </template>
 <style lang="less">
-@import "../../assets/css/index";
-.app-levelbar{
-    h3{
-      font-weight: 600;
-      font-size: 18px;
+@import '../../assets/css/index';
+.app-levelbar {
+    h3 {
+        font-weight: 600;
+        font-size: 18px;
     }
     margin-bottom: 15px;
-    .routers{
-        .router{
+    .routers {
+        .router {
             display: inline-block;
-            &:before{
+            &:before {
                 color: #4a4a4a;
-                content: "\0002f";
+                content: '\0002f';
                 display: inline-block;
                 padding: 0 10px;
             }
-            &:first-child:before{
+            &:first-child:before {
                 display: none;
             }
         }
@@ -35,23 +35,22 @@
 </style>
 <script>
 export default {
-    components: {
-    },
-    data () {
+    components: {},
+    data() {
         return {
             list: null
         };
     },
-    created () {
+    created() {
         this.getList();
     },
     computed: {
-        name () {
+        name() {
             return this.$route.name;
         }
     },
     methods: {
-        getList () {
+        getList() {
             let matched = this.$route.matched.filter(item => item.name);
             let first = matched[0];
             if (first && (first.name !== 'Home' || first.path !== '')) {
@@ -62,7 +61,7 @@ export default {
         }
     },
     watch: {
-        $route () {
+        $route() {
             this.getList();
         }
     }

@@ -3,7 +3,7 @@
 </template>
 <!--  因后期要对app-nprogress 操作， 所以无法使用scopd -->
 <style lang="less">
-@import "../../assets/css/index";
+@import '../../assets/css/index';
 @import '~nprogress/nprogress.css';
 .app-nprogress {
     position: fixed !important;
@@ -13,7 +13,7 @@
     pointer-events: none;
     // 进度条
     .bar {
-        height: 3px!important;
+        height: 3px !important;
         background: @progressColor!important;
     }
     // 进度条最右进度
@@ -30,11 +30,8 @@
 
 <script>
 export default {
-    components: {
-    },
-    props: {
-    },
-    methods: {
-    }
+    components: {},
+    props: {},
+    methods: {}
 };
 </script>

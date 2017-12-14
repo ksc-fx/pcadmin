@@ -39,7 +39,7 @@
 </template>
 
 <style lang="less">
-@import "../../assets/css/index";
+@import '../../assets/css/index';
 .app-sidebar {
     position: fixed;
     top: @navbarHeight;
@@ -47,7 +47,7 @@
     bottom: 0;
     width: @sidebarWidth;
     z-index: @maxZindex - 1;
-    background: #FFF;
+    background: #fff;
     box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
     overflow-y: auto;
     overflow-x: hidden;
@@ -55,7 +55,7 @@
     .sidebar-hd {
         padding: 0 15px;
     }
-    .sidebar-bd{
+    .sidebar-bd {
         .collapse {
             display: none;
             &.in {
@@ -66,28 +66,28 @@
             position: relative;
             height: 0;
             overflow: hidden;
-            transition: height .377s ease;
+            transition: height 0.377s ease;
         }
-        a{
+        a {
             position: relative;
         }
-        .icon{
-            .fa{
+        .icon {
+            .fa {
                 font-size: 14px;
             }
-            &.icon-title .fa{
+            &.icon-title .fa {
                 font-size: 12px;
             }
-            &.icon-expand{
+            &.icon-expand {
                 position: absolute;
                 right: 15px;
             }
         }
         font-size: 14px;
-        li{
+        li {
             position: relative;
         }
-        ul{
+        ul {
             margin: 0 15px;
             opacity: 1;
         }
@@ -99,61 +99,53 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-    components: {
-    },
+    components: {},
     props: {
         show: Boolean
     },
-    data () {
+    data() {
         return {
             isReady: false
         };
     },
     computed: {
-        ...mapGetters([
-            'layout',
-            'menuItems'
-        ])
+        ...mapGetters(['layout', 'menuItems'])
     },
-    mounted () {
-    },
+    mounted() {},
     methods: {
-        ...mapActions([
-            'expandMenu'
-        ]),
-        beforeEnter (el) {
+        ...mapActions(['expandMenu']),
+        beforeEnter(el) {
             el.classList.remove('collapse');
             el.style.display = 'block';
             el.classList.add('collapsing');
             el.style.height = `${el.scrollHeight}px`;
         },
-        afterEnter (el) {
+        afterEnter(el) {
             el.classList.remove('collapsing');
             el.classList.add('collapse', 'in');
         },
-        beforeLeave (el) {
+        beforeLeave(el) {
             el.classList.add('collapsing');
             el.classList.remove('collapse', 'in');
             el.style.height = 0;
         },
-        afterLeave (el) {
+        afterLeave(el) {
             el.classList.remove('collapsing');
             el.classList.add('collapse');
             el.style.display = 'none';
         },
-        isExpanded (item) {
+        isExpanded(item) {
             return item.meta.expanded;
         },
-        toggle (index, item) {
+        toggle(index, item) {
             this.expandMenu(item);
         },
 
-        generatePath (item, subItem) {
+        generatePath(item, subItem) {
             return `${item.component ? item.path + '/' : ''}${subItem.path}`;
         }
     },
 
-    watch: {
-    }
+    watch: {}
 };
 </script>

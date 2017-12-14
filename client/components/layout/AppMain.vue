@@ -22,18 +22,16 @@ export default {
         ...mapGetters({
             layout: 'layout'
         }),
-        hiddenSidebarStyle () {
+        hiddenSidebarStyle() {
             return !this.layout.showSidebar ? { 'margin-left': 0 } : null;
         }
     },
-    data () {
+    data() {
         return {
             showLevelbar: true
         };
     },
-    methods: {
-
-    },
+    methods: {},
     components: {
         Levelbar
     }
@@ -41,13 +39,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @import "../../assets/css/index";
-  .app-main {
+@import '../../assets/css/index';
+.app-main {
     padding-top: @navbarHeight;
     margin-left: @sidebarWidth;
     transform: translate3d(0, 0, 0);
-  }
-  .app-content {
+}
+.app-content {
     padding: 20px;
-  }
+}
 </style>

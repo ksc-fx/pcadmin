@@ -31,54 +31,54 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "../../assets/css/mixin";
-.flexbox{
-    &.dir-row{
+@import '../../assets/css/mixin';
+.flexbox {
+    &.dir-row {
         .flexbox(row);
     }
-    &.dir-row-reverse{
+    &.dir-row-reverse {
         .flexbox(row-reverse);
     }
-    &.dir-column{
+    &.dir-column {
         .flexbox(column);
     }
-    &.dir-column-reverse{
+    &.dir-column-reverse {
         .flexbox(column-reverse);
     }
     // 水平方向
-    &.justify-center{
+    &.justify-center {
         .flexjustify(center);
     }
-    &.justify-flex-start{
+    &.justify-flex-start {
         .flexjustify(flex-start);
     }
-    &.justify-flex-end{
+    &.justify-flex-end {
         .flexjustify(flex-end);
     }
-    &.justify-space-between{
+    &.justify-space-between {
         .flexjustify(space-between);
     }
-    &.justify-space-around{
+    &.justify-space-around {
         .flexjustify(space-around);
     }
     // 垂直方向
-    &.align-center{
+    &.align-center {
         .flexalign(center);
     }
-    &.align-flex-start{
+    &.align-flex-start {
         .flexalign(flex-start);
     }
-    &.align-flex-end{
+    &.align-flex-end {
         .flexalign(flex-end);
     }
-    &.align-baseline{
+    &.align-baseline {
         .flexalign(baseline);
     }
-    &.align-stretch{
+    &.align-stretch {
         .flexalign(stretch);
     }
     // 换行
-    &.wrap-wrap{
+    &.wrap-wrap {
         .flexwrap(wrap);
     }
 }

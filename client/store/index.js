@@ -15,18 +15,19 @@ const state = {
 };
 
 const actions = {
-    expandMenu ({commit, state}, item) {
+    expandMenu({ commit, state }, item) {
+        console.log(state);
         commit('expandMenu', item);
     }
 };
 
 const getters = {
-    layout: (state) => state.layout,
-    menuItems: (state) => state.menus.items
+    layout: state => state.layout,
+    menuItems: state => state.menus.items
 };
 
 const mutations = {
-    expandMenu (state, item) {
+    expandMenu(state, item) {
         item.meta.expanded = !item.meta.expanded;
     }
 };

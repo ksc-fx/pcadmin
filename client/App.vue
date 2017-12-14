@@ -32,37 +32,37 @@
 </template>
 
 <style lang="less">
-    @import '~pcadmin-base/src/css/reset.less';
-    @import "./assets/css/index";
-    .animated {
-        animation-duration: .35s;
-    }
-    
-    .pcadmin{
-        .hd{
-            height: 100%;
-            padding: 0 30px 0 15px;
-            font-size: 14px;
-            .logo{
-                font-size: 25px;
-                .title{
-                    padding-left: 15px;
-                }
+@import '~pcadmin-base/src/css/reset.less';
+@import './assets/css/index';
+.animated {
+    animation-duration: 0.35s;
+}
+
+.pcadmin {
+    .hd {
+        height: 100%;
+        padding: 0 30px 0 15px;
+        font-size: 14px;
+        .logo {
+            font-size: 25px;
+            .title {
+                padding-left: 15px;
             }
-            .cmenus{
-                .flex(1);
+        }
+        .cmenus {
+            .flex(1);
+            height: 100%;
+            a {
+                .center();
+                padding: 0 20px;
                 height: 100%;
-                a{
-                    .center();
-                    padding: 0 20px;
-                    height: 100%;
-                    &:hover{
-                        background-color: whitesmoke;
-                    }
+                &:hover {
+                    background-color: whitesmoke;
                 }
             }
         }
     }
+}
 </style>
 
 <script>
@@ -75,21 +75,16 @@ export default {
         Sidebar,
         AppMain
     },
-    data () {
-        return {
-
-        };
+    data() {
+        return {};
     },
     computed: {
-        ...mapGetters([
-            'layout'
-        ])
+        ...mapGetters(['layout'])
     },
-    mounted () {
-        this.$http.get('http://www.a.com')
-            .catch((resp) => {
-                console.log(resp);
-            });
+    mounted() {
+        this.$http.get('http://www.a.com').catch(resp => {
+            console.log(resp);
+        });
     }
 };
 </script>

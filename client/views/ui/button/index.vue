@@ -13,33 +13,34 @@
     </div>
 </template>
 <style lang="less">
-    .demo{
-        .demo-md,.demo-code,.demo-case{
-            padding:15px;
-            background-color: #fff;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
+.demo {
+    .demo-md,
+    .demo-code,
+    .demo-case {
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-bottom: 10px;
     }
+}
 </style>
 <script>
-import Demo, {} from 'pcadmin-button/demo/index.vue';
+import Demo from 'pcadmin-button/demo/index.vue';
 import Code from 'pcadmin-button/demo/index.code';
 import Md from 'pcadmin-button/README.md';
 
-export default{
-    data () {
+export default {
+    data() {
         return {
             Md,
             Code
         };
     },
-    mounted () {
+    mounted() {
         window.hljs.highlightBlock(this.$refs.code);
         window.hljs.highlightBlock(this.$refs.md);
     },
-    methods: {
-    },
+    methods: {},
     components: {
         Demo
     }
