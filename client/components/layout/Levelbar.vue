@@ -52,7 +52,7 @@ export default {
     methods: {
         getList() {
             let matched = this.$route.matched.filter(item => item.name);
-            let first = matched[0];
+            const first = matched[0];
             if (first && (first.name !== 'Home' || first.path !== '')) {
                 matched = [{ name: 'Home', path: '/' }].concat(matched);
             }

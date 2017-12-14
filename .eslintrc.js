@@ -1,10 +1,13 @@
 module.exports = {
     parser: 'babel-eslint',
     parserOptions: {
-        sourceType: 'module'
+        sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true
+        }
     },
     extends: ['eslint:recommended'],
-    plugins: ['prettier', 'import'],
+    plugins: ['html', 'vue', 'prettier', 'import'],
     rules: {
         'no-console': 'off',
         'prefer-arrow-callback': 'error',
